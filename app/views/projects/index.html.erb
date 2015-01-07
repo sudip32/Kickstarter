@@ -1,0 +1,21 @@
+Sudip rocks
+Total number of projects: <%= @total_no_projects %>
+</br>
+<h3>list of project</h3>
+<%= link_to 'Add', new_project_path%>
+<%= link_to 'Top Hits', top_hits_projects_path%>
+</br>
+<table>
+		<tr>
+			<th>Title</th><th>Abstract</th>
+		<% @projects.each do |project|%>
+			<%= project.title%>
+			<%= project.abstract%>
+			<%= link_to 'Edit', edit_project_path(project.id)%>
+			<%= link_to 'Delete', project_path(project.id), method: 'delete'%>
+			<%= link_to 'View Details', project_path(project.id)%>
+
+			</br>
+		<%end%>
+</table>
+
